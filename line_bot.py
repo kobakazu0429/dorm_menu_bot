@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort, make_response, jsonify
 
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -14,6 +14,11 @@ app = Flask(__name__)
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
+
+
+@app.route("/", methods=['GET'])
+def test():
+    return make_response(jsonify({'status': 'Server is Alive Now.'}), 200)
 
 
 @app.route("/callback", methods=['POST'])
