@@ -19,19 +19,19 @@ def create_msg(db):
 
     menu_dict = {}
 
-    if db['morning']:
+    if 'morning' in db.keys():
         menu_dict = {
             'name': '朝',
             'menu': db['morning']
         }
 
-    elif db['lunch']:
+    elif 'lunch' in db.keys():
         menu_dict = {
             'name': 'お昼',
             'menu': db['lunch']
         }
 
-    elif db['dinnerA']:
+    elif 'dinnerA' in db.keys():
         menu_dict = {
             'name': '夜',
             'menu': 'A : %s\nB : %s\nAB: %s' % (db['dinnerA'], db['dinnerB'], db['dinnerAB'])
