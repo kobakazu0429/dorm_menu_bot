@@ -5,6 +5,9 @@
   "repository": "git@github.com:kobakazu0429/dorm_menu_bot.git",
   "author": "kobakakzu0429 <kobakazu10@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "npx ts-node src/index.ts"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "node-schedule": "^1.3.2",
