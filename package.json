@@ -19,7 +19,7 @@
     "@types/node": "^11.13.4",
     "@types/node-schedule": "^1.2.3",
     "@types/twitter": "^1.7.0",
-    "dotenv": "^7.0.0",
+    "dotenv": "^8.0.0",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.3"
   }
