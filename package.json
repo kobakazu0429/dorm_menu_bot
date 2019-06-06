@@ -20,7 +20,7 @@
     "@types/node-schedule": "^1.2.3",
     "@types/twitter": "^1.7.0",
     "dotenv": "^7.0.0",
-    "ts-node": "^8.1.0",
+    "ts-node": "^8.2.0",
     "typescript": "^3.4.3"
   }
 }
