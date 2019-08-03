@@ -25,7 +25,7 @@
     "@types/twitter": "^1.7.0",
     "dotenv": "^7.0.0",
     "prettier": "^1.18.2",
-    "ts-node": "^8.1.0",
+    "ts-node": "^8.2.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
