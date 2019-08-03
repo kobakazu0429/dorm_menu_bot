@@ -1,8 +1,8 @@
-import Twitter = require("twitter");
+import Twit from 'twit';
 import { TWITTER_CONFIG } from "./env";
 import { getJST } from "./utils";
 
-const client = new Twitter(TWITTER_CONFIG);
+const T = new Twit(TWITTER_CONFIG);
 
 interface IOptions {
   menu: string | null;
@@ -26,7 +26,7 @@ export const post = (options: IOptions) => {
     ].join("\n");
   }
 
-  client.post("statuses/update", { status: text }, (error, tweet, response) => {
+  T.post("statuses/update", { status: text }, (error, tweet) => {
     if (!error) {
       console.log(tweet);
     }
