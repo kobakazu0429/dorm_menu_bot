@@ -5,9 +5,9 @@ const MenuAPI = axios.create({
   baseURL: "https://www.xn--28jyc.tk/"
 });
 
-interface IOptions  {
-  type: "morning" | "lunch" | "dinner"
-};
+interface IOptions {
+  type: "morning" | "lunch" | "dinner";
+}
 
 export const getMenu = async (options: IOptions): Promise<string | null> => {
   const { type } = options;
@@ -23,6 +23,6 @@ export const getMenu = async (options: IOptions): Promise<string | null> => {
   });
   const result = response.data;
   return result.length === 1 ? result[0][type] : null;
-}
+};
 
-export default MenuAPI
+export default MenuAPI;

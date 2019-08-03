@@ -23,7 +23,7 @@ const time = {
 (async () => {
   scheduleJob(time.morning, async () => {
     const menu = await getMenu({ type: "morning" });
-    post({ menu, typeJp:"朝"});
+    post({ menu, typeJp: "朝" });
   });
 
   scheduleJob(time.lunch, async () => {
