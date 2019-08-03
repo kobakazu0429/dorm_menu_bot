@@ -7,6 +7,9 @@ export const getJST = () => {
   const day = dayList[new Date(year, month - 1, date, 9).getDay()];
 
   return {
-    year, month, date, day
+    year,
+    month,
+    date,
+    day
   };
-}
+};
