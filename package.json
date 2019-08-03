@@ -1,12 +1,16 @@
 {
   "name": "dorm_menu_bot",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "src/index.js",
   "repository": "git@github.com:kobakazu0429/dorm_menu_bot.git",
   "author": "kobakakzu0429 <kobakazu10@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npx ts-node src/index.ts"
+    "lint": "tslint --fix -c ./tslint.json 'src/**/*.ts'",
+    "build": "yarn run lint && webpack --config ./webpack.config.js",
+    "dev": "yarn build --watch",
+    "start": "npx ts-node src/index.ts",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -16,11 +20,16 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/dotenv": "^6.1.1",
-    "@types/node": "^11.13.4",
+    "@types/node": "^12.0.8",
     "@types/node-schedule": "^1.2.3",
     "@types/twitter": "^1.7.0",
     "dotenv": "^7.0.0",
+    "prettier": "^1.18.2",
     "ts-node": "^8.2.0",
-    "typescript": "^3.4.3"
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.5.1"
   }
 }
