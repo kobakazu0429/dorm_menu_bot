@@ -12,6 +12,9 @@
       true,
       "ignore-same-line"
     ],
+    "interface-name": [
+      false
+    ],
     "no-unused-expression": [
       true,
       "allow-fast-null-checks"
