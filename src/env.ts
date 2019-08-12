@@ -1,11 +1,11 @@
 import { config } from "dotenv";
-import {ConfigKeys} from 'twit';
+import Twit = require("twit");
 
 config();
 
-export const TWITTER_CONFIG: ConfigKeys = {
-  consumer_key: process.env.CK || '',
-  consumer_secret: process.env.CS || '',
-  access_token: process.env.AK || '',
-  access_token_secret: process.env.AS || ''
+export const TWITTER_CONFIG: Twit.ConfigKeys = {
+  consumer_key: process.env.CK || "",
+  consumer_secret: process.env.CS || "",
+  access_token: process.env.AK || "",
+  access_token_secret: process.env.AS || ""
 };

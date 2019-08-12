@@ -1,6 +1,8 @@
-import { getMenu } from "./axios";
-import { post } from "./twitter";
 import { scheduleJob } from "node-schedule";
+import { Bot } from "./bot";
+import { streamMention } from "./client/twitter";
+
+const bot = new Bot();
 
 const time = {
   morning: {
@@ -20,19 +22,23 @@ const time = {
   }
 };
 
+streamMention.on("tweet", data => {
+  console.log(data);
+  bot.allTweetToUser(data.user.screen_name, data.id_str);
+});
+
+streamMention.on("error", error => {
+  console.log(error);
+});
+
 (async () => {
   scheduleJob(time.morning, async () => {
-    const menu = await getMenu({ type: "morning" });
-    post({ menu, typeJp: "朝" });
+    await bot.morningTweet();
   });
-
   scheduleJob(time.lunch, async () => {
-    const menu = await getMenu({ type: "lunch" });
-    post({ menu, typeJp: "お昼" });
+    await bot.lunchTweet();
   });
-
   scheduleJob(time.dinner, async () => {
-    const menu = await getMenu({ type: "dinner" });
-    post({ menu, typeJp: "夜" });
+    await bot.dinnerTweet();
   });
 })();
