@@ -9,7 +9,9 @@ interface IOptions {
   type: "morning" | "lunch" | "dinner";
 }
 
-export const getMenu = async (options: IOptions): Promise<string | null> => {
+export const getMenu = async (
+  options: IOptions = {} as IOptions
+): Promise<string | null> => {
   const { type } = options;
 
   const { year, month, date } = getJST();
@@ -22,7 +24,13 @@ export const getMenu = async (options: IOptions): Promise<string | null> => {
     }
   });
   const result = response.data;
-  return result.length === 1 ? result[0][type] : null;
+  if (result.length !== 1) return null;
+
+  if (type) {
+    return result[0][type];
+  } else {
+    return result[0];
+  }
 };
 
 export default MenuAPI;

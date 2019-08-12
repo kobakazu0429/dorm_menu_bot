@@ -17,3 +17,7 @@ export const post = (payload: IPost) => {
     }
   });
 };
+
+export const streamMention = T.stream("statuses/filter", {
+  track: "@kure_kosen_dorm"
+});
